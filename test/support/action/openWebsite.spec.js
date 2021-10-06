@@ -5,17 +5,17 @@ describe('openWebsite', () => {
         global.browser = {
             url: jest.fn(),
             options: {
-                baseUrl: 'http://mysite.com',
+                baseUrl: 'http://demoshop24.com',
             },
         };
     });
 
     it('should call url with the given url if the first param is `url`', async () => {
-        await openWebsite('url', 'http://example.com');
+        await openWebsite('url', 'http://demoshop24.com');
 
         expect(global.browser.url).toHaveBeenCalledTimes(1);
         expect(global.browser.url)
-            .toHaveBeenCalledWith('http://example.com');
+            .toHaveBeenCalledWith('http://demoshop24.com');
     });
 
     it(
@@ -26,7 +26,7 @@ describe('openWebsite', () => {
 
             expect(global.browser.url).toHaveBeenCalledTimes(1);
             expect(global.browser.url)
-                .toHaveBeenCalledWith('http://mysite.com/path/to/page');
+                .toHaveBeenCalledWith('http://demoshop24.com/index.php?route=account/register');
         }
     );
 });
